@@ -677,5 +677,43 @@ Practice at your own pace with free yoga and mindful movement videos you can ret
   © 2026 Relief Yoga with Ayla • Sparks, NV
 </footer>
 
+<script>
+
+  const contactForm = document.querySelector(".contact-form");
+
+  contactForm.addEventListener("submit", async function (event) {
+
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+
+    const response = await fetch(contactForm.action, {
+
+      method: "POST",
+
+      body: formData,
+
+      headers: {
+
+        "Accept": "application/json"
+
+      }
+
+    });
+
+    if (response.ok) {
+
+      window.location.href = "https://yogareliefwithayla.com/thank-you.html";
+
+    } else {
+
+      alert("There was a problem sending your message. Please try again.");
+
+    }
+
+  });
+
+</script>  
+
 </body>
 </html>
