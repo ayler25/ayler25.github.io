@@ -510,6 +510,42 @@
   margin: 0 auto 12px;
 }
 
+    #backToTop {
+
+  position: fixed;
+
+  right: 20px;
+
+  bottom: 24px;
+
+  width: 48px;
+
+  height: 48px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #304c44;
+
+  color: white;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  z-index: 1000;
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+
+}
+
    </style>
 </head>
 <body>
@@ -727,7 +763,7 @@ Practice at your own pace with free yoga and mindful movement videos you can ret
 <footer>
   © 2026 Relief Yoga with Ayla • Sparks, NV
 </footer>
-
+<button id="backToTop" aria-label="Back to top">↑</button>
 <script>
 
   const contactForm = document.querySelector(".contact-form");
@@ -763,6 +799,34 @@ Practice at your own pace with free yoga and mindful movement videos you can ret
     }
 
   });
+
+  const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function () {
+
+  if (window.scrollY > 400) {
+
+    backToTop.style.display = "flex";
+
+  } else {
+
+    backToTop.style.display = "none";
+
+  }
+
+});
+
+backToTop.addEventListener("click", function () {
+
+  window.scrollTo({
+
+    top: 0,
+
+    behavior: "smooth"
+
+  });
+
+});
 
 </script>  
 
